@@ -1,8 +1,9 @@
 {
-	"name": "concourse",
-	"displayName": "concourse",
-	"description": "Concourse Tree View",
+	"name": "vscode-concourse",
 	"version": "0.0.1",
+	"displayName": "concourse",
+	"publisher": "jwilson",
+	"description": "Concourse Tree View",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -16,18 +17,55 @@
 	"contributes": {
 		"viewsContainers": {
 			"activitybar": [
-			  {
-				"id": "consourse-explorer",
-				"title": "Consourse Explorer",
-				"icon": "media/dep.svg"
-			  }
+				{
+					"id": "consourse-explorer",
+					"title": "Consourse Explorer",
+					"icon": "media/dep.svg"
+				}
 			]
-		  },		
+		},
 		"views": {
 			"consourse-explorer": [
 				{
 					"id": "consourseOutline",
 					"name": "Consourse Outline"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "consourseOutline.refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "consourseOutline.pause",
+				"title": "Toggle Pause"
+			},
+			{
+				"command": "consourseOutline.excute",
+				"title": "Execute"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "consourseOutline.refreshEntry",
+					"when": "view == consourseOutline",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "consourseOutline.pause",
+					"when": "view == consourseOutline && viewItem == pipeline || viewItem == job"
+				},
+				{
+					"command": "consourseOutline.excute",
+					"when": "view == consourseOutline && viewItem == job"
 				}
 			]
 		}
@@ -51,8 +89,11 @@
 		"vscode-test": "^1.2.2"
 	},
 	"dependencies": {
+		"@types/eventsource": "^1.1.2",
 		"@types/js-yaml": "^3.12.1",
 		"axios": "^0.19.2",
-		"js-yaml": "^3.13.1"
+		"eventsource": "^1.0.7",
+		"js-yaml": "^3.13.1",
+		"moment": "^2.24.0"
 	}
 }
