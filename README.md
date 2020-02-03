@@ -21,15 +21,15 @@ Tree view of the concourse pipeines
 1. Make sure you can login using the fly cli.
 2. Select the concourse icon. <sup>(1)</sup>
 3. Open the team that you logged in with the cli. <sup>(2)</sup>
-3. Expand the pipleine and right click the job you want to trigger. <sup>(3)</sup>
-4. The poutput from the Job will appear in the concourse output window.<sup>(4)</sup>
+4. Expand the pipleine and right click the job you want to trigger. <sup>(3)</sup>
+5. The output from the Job will appear in the concourse output window.<sup>(4)</sup>
 
 ![alt text](vs-concouse-2.png)
 
 ## Requirements
 
 You need to have the fly cli installed and logged on.
-The extention looks for credentials in the home directory ifn the .flyrc file
+The extention looks for credentials in the home directory in the .flyrc file
 
 ## Known Issues
 
