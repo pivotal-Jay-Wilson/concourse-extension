@@ -13,10 +13,10 @@ class PipelineObject extends vscode.TreeItem {
         this.contextValue = contextValue;
         this.url = url;
         this.command = command;
+        this.tooltip = this.label;
         let icon = 'dependency.svg';
         switch (contextValue) {
             case 'target':
-                icon = 'dependency.svg';
                 break;
             case 'pipeline':
                 if (paused) {
@@ -69,6 +69,7 @@ class PipelineObject extends vscode.TreeItem {
                         icon = 'build-g.svg';
                         break;
                 }
+                break;
             default:
                 break;
         }
@@ -76,9 +77,6 @@ class PipelineObject extends vscode.TreeItem {
             light: path.join(__filename, '..', '..', 'resources', 'light', icon),
             dark: path.join(__filename, '..', '..', 'resources', 'dark', icon)
         };
-    }
-    get tooltip() {
-        return `${this.label}`;
     }
 }
 exports.PipelineObject = PipelineObject;
