@@ -92,7 +92,7 @@
 		"@types/eventsource": "^1.1.2",
 		"@types/js-yaml": "^3.12.1",
 		"axios": ">=0.21.1",
-		"eventsource": "^1.0.7",
+		"eventsource": "^2.0.2",
 		"js-yaml": "^3.13.1",
 		"moment": "^2.24.0"
 	}
